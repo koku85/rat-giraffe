@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_114831) do
+ActiveRecord::Schema.define(version: 2020_11_11_123155) do
 
   create_table "nearest_stations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text "line_name"
     t.text "station_name"
-    t.integer "time"
+    t.integer "minutes_walk"
   end
 
   create_table "properties", force: :cascade do |t|
