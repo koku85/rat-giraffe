@@ -12,31 +12,37 @@
   <% end %>
 
   <div class="property_name">
-    <%= form.label :物件名 %>
-    <%= form.text_area :property_name %>
+    <%= form.label :property_name %>
+    <%= form.text_field :property_name %>
   </div>
 
   <div class="rent">
-    <%= form.label :賃料 %>
+    <%= form.label :rent %>
     <%= form.number_field :rent %>
   </div>
 
   <div class="address">
-    <%= form.label :住所 %>
-    <%= form.text_area :address %>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
   </div>
 
   <div class="age">
-    <%= form.label :築年数 %>
+    <%= form.label :age %>
     <%= form.number_field :age %>
   </div>
 
   <div class="remarks">
-    <%= form.label :remarks %>
-    <%= form.text_field :備考 %>
+    <%= form.label :emarks %>
+    <%= form.text_area :remarks %>
   </div>
 
+<hr>
+
+<% n=1 %>
   <%= form.fields_for :nearest_stations do |nearest_station| %>
+    <p>
+      <h2>最寄り駅<%= n %></h2>
+    </p>
   　　<div class="line_name">
     　　<%= nearest_station.label :路線名 %><br>
     　　<%= nearest_station.text_field :line_name %>
@@ -49,9 +55,11 @@
     　　<%= nearest_station.label :徒歩分数 %><br>
    　　 <%= nearest_station.text_field :minutes_walk %>分<br>
   　　</div>
+    <% n = n+1 %>
   <% end %>
 
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '登録する' %>
   </div>
 <% end %>

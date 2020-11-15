@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      nearest_station: 最寄り駅
+      property: 物件
+    attributes:
+      nearest_station:
+        line_name: 路線名
+        station_name: 駅名
+        minutes_walk: 徒歩分数
+      property:
+        property_name: 物件名
+        rent: 賃料
+        address: 住所
+        age: 築年数
+        remarks: 備考
